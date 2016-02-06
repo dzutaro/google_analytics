@@ -20,7 +20,7 @@ Replace the `UA-XXXX-Y` with your tracking id from step 1.
 
 ### 3. Add the tracking code
 
-Add this snippet to your app's `index.html` file:
+Add this snippet to your app's `index.html` file before the closing `</body>` tag:
 
 ```
 <!-- Google Analytics -->
