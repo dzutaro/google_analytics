@@ -1,34 +1,45 @@
-google_analytics
-================
-
 The Google Analytics module for DrupalGap.
 
-Setup
-=====
+## Setup
 
-1 - Get a Google Analytics Tracking ID for your app:
+### 1. Get a Tracking ID
 
-      https://support.google.com/analytics/answer/2614741?hl=en&ref_topic=2587085
+- https://support.google.com/analytics/answer/2614741?hl=en&ref_topic=2587085
 
-2. Set up the Google Analytics SDK for your desired platform, e.g. Android:
+### 2. Add configuration
 
-      https://developers.google.com/analytics/devguides/collection/android/v4/
-
-3 - Enable this module as usual in DrupalGap.
-
-4 - Add this snippet to your settings.js file: 
+Add this to your `settings.js` file:
 
 ```
-
-/**
- * Google Analytics Settings
- */
-drupalgap.settings.google_analytics = {
-  account: 'UA-XXXXX-X'
+dg.settings.google_analytics = {
+  id: 'UA-XXXX-Y'
 };
-
 ```
 
-5 - Replace the account string value mentioned above with your Google Analytics
-   account's id.
+Replace the `UA-XXXX-Y` with your tracking id from step 1.
 
+### 3. Add the tracking code
+
+Add this snippet to your app's `index.html` file:
+
+```
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', dg.config('google_analytics').id, 'auto');
+ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+```
+
+### 4. Enable the module
+
+Include the module in your `index.html` file:
+
+```
+<script src="modules/contrib/google_analytics/google_analytics.js"></script>
+```
