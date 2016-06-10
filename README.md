@@ -44,6 +44,8 @@ Then add this to your `index.html` file right before the closing `</body>` tag:
 <!-- End Google Analytics -->
 ```
 
+If you are compiling your app, be sure to replace the `//www.google-analytics.com/analytics.js` with `https://www.google-analytics.com/analytics.js` instead.
+
 ## Compiled App Analytics
 
 Get a Google Analytics Tracking ID for your app:
