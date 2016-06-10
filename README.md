@@ -36,6 +36,8 @@ ga('send', 'pageview');
 <!-- End Google Analytics -->
 ```
 
+If you are compiling your app, be sure to replace the `//www.google-analytics.com/analytics.js` with `https://www.google-analytics.com/analytics.js` instead.
+
 ### 4. Enable the module
 
 Include the module in your `index.html` file:
